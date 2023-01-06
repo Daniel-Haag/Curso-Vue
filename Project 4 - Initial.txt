@@ -1,0 +1,1 @@
+Não há uma versão inicial para o projeto #4 pois vamos criá-lo juntos desde o zero usando o Vue cli
