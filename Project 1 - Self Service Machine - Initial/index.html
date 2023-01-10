@@ -30,10 +30,15 @@
           <div class="description">
             <span class="name">{{product.name}}</span>
             <span class="price">{{product.price}}</span>
-            <div class="quantity-area">
-              <button>-</button>
+            <div class="quantity-area" v-if="product.active">
+              <button
+                @click.stop="product.quantity--"
+                :disabled="product.quantity == 0"
+              >
+                -
+              </button>
               <span class="quantity">{{product.quantity}}</span>
-              <button>+</button>
+              <button @click.stop="product.quantity++">+</button>
             </div>
           </div>
         </div>
