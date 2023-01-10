@@ -18,7 +18,12 @@
       <section class="items">
         <!-- <h4>Selecione os produtos</h4> -->
         <h4>{{message}}</h4>
-        <div v-for="product in products" class="product">
+        <div
+          v-for="product in products"
+          class="product"
+          @click="product.active = !product.active"
+          :class="product.active ? 'selected' : '' "
+        >
           <div class="photo">
             <img :src="product.photo" />
           </div>
