@@ -20,12 +20,13 @@ const handlingForms = {
         lname: null,
         instrument: null,
       },
-      methods: {
-        addMember: function () {
-          this.members.push(this.newMember);
-        },
-      },
     };
+  },
+
+  methods: {
+    addMember: function () {
+      this.members.push(this.newMember);
+    },
   },
 };
 
