@@ -25,7 +25,16 @@ const handlingForms = {
 
   methods: {
     addMember: function () {
-      this.members.push(this.newMember);
+      if (
+        this.newMember.fname &&
+        this.newMember.lname &&
+        this.newMember.instrument
+      ) {
+        this.members.push(this.newMember);
+        this.newMember = {};
+      } else {
+        alert("Preencha os dados!");
+      }
     },
   },
 };
