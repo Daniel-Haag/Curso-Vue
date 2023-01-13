@@ -18,16 +18,20 @@
       <section class="todo-list">
         <h3>{{titulo}}</h3>
 
-        <div class="all-todos">
-          <div class="single-todo done">
-            <p>Aprender HTML, CSS e Javascript</p>
+        <div class="all-todos" v-for="tarefa in listaTarefas">
+          <div
+            class="single-todo"
+            @click="tarefa.finalizada = !tarefa.finalizada"
+            :class="tarefa.finalizada ? 'done' : ''"
+          >
+            <p>{{tarefa.descricaoTarefa}}</p>
           </div>
-          <div class="single-todo done">
+          <!-- <div class="single-todo done">
             <p>Aprender o básico de Vue JS</p>
           </div>
           <div class="single-todo">
             <p>Completar o desafio de Vue JS com excelência</p>
-          </div>
+          </div> -->
         </div>
 
         <button class="clear">Limpar tudo</button>

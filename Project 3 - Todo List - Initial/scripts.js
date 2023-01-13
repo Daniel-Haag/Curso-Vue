@@ -1,6 +1,7 @@
 var tarefas = [
   {
     descricaoTarefa: "Tarefa Exemplo",
+    finalizada: false,
   },
 ];
 
