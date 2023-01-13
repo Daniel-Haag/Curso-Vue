@@ -26,18 +26,16 @@
           >
             <p>{{tarefa.descricaoTarefa}}</p>
           </div>
-          <!-- <div class="single-todo done">
-            <p>Aprender o básico de Vue JS</p>
-          </div>
-          <div class="single-todo">
-            <p>Completar o desafio de Vue JS com excelência</p>
-          </div> -->
         </div>
 
-        <button class="clear">Limpar tudo</button>
+        <button @click="limparTudo()" class="clear">Limpar tudo</button>
 
-        <input type="text" placeholder="Escreva uma nova tarefa..." />
-        <button class="add">Adicionar</button>
+        <input
+          type="text"
+          v-model="novaTarefa.descricaoTarefa"
+          placeholder="Escreva uma nova tarefa..."
+        />
+        <button @click="adicionarTarefa()" class="add">Adicionar</button>
 
         <div class="instructions">
           Instruções:
