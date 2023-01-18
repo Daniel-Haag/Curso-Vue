@@ -1,15 +1,8 @@
-tarefas = [
-  {
-    descricaoTarefa: "Tarefa Exemplo",
-    finalizada: false,
-  },
-];
-
 const ListagemDeTarefas = {
   data() {
     return {
       titulo: "Lista de Tarefas",
-      listaTarefas: window.tarefas,
+      listaTarefas: [],
       novaTarefa: {
         descricaoTarefa: null,
         finalizada: false,
@@ -22,6 +15,10 @@ const ListagemDeTarefas = {
       if (this.novaTarefa.descricaoTarefa) {
         this.listaTarefas.push(this.novaTarefa);
         this.novaTarefa = {};
+        window.localStorage.setItem(
+          "tarefas",
+          JSON.stringify(this.listaTarefas)
+        );
       } else {
         alert("Nada informado!");
       }

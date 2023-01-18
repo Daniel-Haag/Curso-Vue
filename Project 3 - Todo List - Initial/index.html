@@ -28,7 +28,13 @@
           </div>
         </div>
 
-        <button @click="limparTudo()" class="clear">Limpar tudo</button>
+        <button
+          @click="limparTudo()"
+          v-if="listaTarefas.length > 0"
+          class="clear"
+        >
+          Limpar tudo
+        </button>
 
         <input
           type="text"
