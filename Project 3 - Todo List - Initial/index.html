@@ -21,7 +21,7 @@
         <div class="all-todos" v-for="tarefa in listaTarefas">
           <div
             class="single-todo"
-            @click="tarefa.finalizada = !tarefa.finalizada"
+            @click="tarefa.finalizada = !tarefa.finalizada; guardarTarefas()"
             :class="tarefa.finalizada ? 'done' : ''"
           >
             <p>{{tarefa.descricaoTarefa}}</p>

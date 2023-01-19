@@ -22,11 +22,16 @@ const ListagemDeTarefas = {
       } else {
         alert("Nada informado!");
       }
+      guardarTarefas();
     },
     limparTudo: function () {
       while (this.listaTarefas.length) {
         this.listaTarefas.pop();
       }
+      guardarTarefas();
+    },
+    guardarTarefas: function () {
+      window.localStorage.setItem("tarefas", JSON.stringify(this.listaTarefas));
     },
   },
   created() {
@@ -34,6 +39,7 @@ const ListagemDeTarefas = {
       ? JSON.parse(localStorage.getItem("tarefas"))
       : this.listaTarefas;
   },
+  updated() {},
 };
 
 Vue.createApp(ListagemDeTarefas).mount("#app");
