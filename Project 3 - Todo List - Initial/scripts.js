@@ -29,6 +29,11 @@ const ListagemDeTarefas = {
       }
     },
   },
+  created() {
+    this.listaTarefas = localStorage.getItem("tarefas")
+      ? JSON.parse(localStorage.getItem("tarefas"))
+      : this.listaTarefas;
+  },
 };
 
 Vue.createApp(ListagemDeTarefas).mount("#app");
