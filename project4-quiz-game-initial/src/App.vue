@@ -36,8 +36,6 @@ export default {
   },
 };
 
-//Vue.axios.get(api).then(response);
-
 //https://opentdb.com/api.php?amount=1&category=18
 </script>
 
