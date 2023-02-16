@@ -20,10 +20,19 @@ export default {
     return {
       question: undefined,
       incorrectAnswers: undefined,
-      correctAnswers: undefined,
+      correctAnswer: undefined,
     };
   },
 
+  computed: {
+    answers() {
+      //Obter primeiramente as respostas incorretas, pois são um array
+      var answers = JSON.parse(JSON.stringify(this.incorrectAnswers));
+      answers.push(this.correctAnswer);
+      shuffle(answers);
+      return answers;
+    },
+  },
   //life cycle hook (created)
   created() {
     this.axios
@@ -31,7 +40,7 @@ export default {
       .then((response) => {
         this.question = response.data.results[0].question;
         this.incorrectAnswers = response.data.results[0].incorrect_answers;
-        this.correctAnswers = response.data.results[0].correct_answer;
+        this.correctAnswer = response.data.results[0].correct_answer;
       });
   },
 };
